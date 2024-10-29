@@ -13,8 +13,7 @@
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:src="@drawable/perfil"
-        android:layout_gravity="center_vertical"
-        android:contentDescription="@drawable/perfil" />
+        android:contentDescription="@string/profile_image" />
 
     <LinearLayout
         android:layout_width="0dp"

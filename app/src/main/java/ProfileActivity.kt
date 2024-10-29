@@ -12,27 +12,27 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        // Recuperar los datos del intent
+        // Recuperar los datos enviados por el Intent
         val name = intent.getStringExtra("CONTACT_NAME") ?: "Sin nombre"
         val phone = intent.getStringExtra("CONTACT_PHONE") ?: "Sin teléfono"
         val imageResId = intent.getIntExtra("CONTACT_IMAGE", R.drawable.perfil)
 
-        // Vincular las vistas del layout
+        // Vincular las vistas con el layout
         val profileImageView: ImageView = findViewById(R.id.profileImage)
-        val profileNameTextView: TextView = findViewById(R.id.profileName)
-        val profilePhoneTextView: TextView = findViewById(R.id.profilePhone)
+        val profileNameTextView: TextView = findViewById(R.id.contactDetailName)
+        val profilePhoneTextView: TextView = findViewById(R.id.contactDetailPhone)
 
         // Establecer los valores en las vistas
         profileImageView.setImageResource(imageResId)
         profileNameTextView.text = name
         profilePhoneTextView.text = phone
 
-        // Configurar el evento de clic para hacer una llamada con ACTION_DIAL
+        // Configurar clic en el número para abrir el marcador
         profilePhoneTextView.setOnClickListener {
-            val intent = Intent(Intent.ACTION_DIAL).apply {
+            val dialIntent = Intent(Intent.ACTION_DIAL).apply {
                 data = Uri.parse("tel:$phone")
             }
-            startActivity(intent)
+            startActivity(dialIntent)
         }
     }
 }
