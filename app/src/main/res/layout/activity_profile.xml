@@ -34,11 +34,11 @@
 
         <!-- Teléfono del Contacto -->
         <TextView
-            android:id="@+id/contactDetailPhone"
+            android:id="@+id/contactDetailHist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Número de Teléfono"
-            android:textSize="18sp"
-            android:textColor="@android:color/black" />
+            android:text="Cuando me enamoro"
+            android:textSize="18sp" />
+
     </LinearLayout>
 </ScrollView>

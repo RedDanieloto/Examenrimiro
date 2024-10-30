@@ -10,9 +10,12 @@ class ContactDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_contact_detail)
 
         val name = intent.getStringExtra("CONTACT_NAME")
-        val phone = intent.getStringExtra("CONTACT_PHONE")
+        val hist = intent.getStringExtra("CONTACT_HIST")
+        val number = intent.getStringExtra("CONTACT_NUMBER")
 
         findViewById<TextView>(R.id.contactDetailName).text = name
-        findViewById<TextView>(R.id.contactDetailPhone).text = phone
+        findViewById<TextView>(R.id.contactDetailHist).text = hist
+
+
     }
 }

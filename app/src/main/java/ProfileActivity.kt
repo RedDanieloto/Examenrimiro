@@ -14,25 +14,19 @@ class ProfileActivity : AppCompatActivity() {
 
         // Recuperar los datos enviados por el Intent
         val name = intent.getStringExtra("CONTACT_NAME") ?: "Sin nombre"
-        val phone = intent.getStringExtra("CONTACT_PHONE") ?: "Sin teléfono"
+        val hist = intent.getStringExtra("CONTACT_HIST") ?: "Sin historia"
         val imageResId = intent.getIntExtra("CONTACT_IMAGE", R.drawable.perfil)
 
-        // Vincular las vistas con el layout
+
         val profileImageView: ImageView = findViewById(R.id.profileImage)
         val profileNameTextView: TextView = findViewById(R.id.contactDetailName)
-        val profilePhoneTextView: TextView = findViewById(R.id.contactDetailPhone)
+        val profileHistTextView: TextView = findViewById(R.id.contactDetailHist)
 
         // Establecer los valores en las vistas
         profileImageView.setImageResource(imageResId)
         profileNameTextView.text = name
-        profilePhoneTextView.text = phone
+        profileHistTextView.text = hist
 
-        // Configurar clic en el número para abrir el marcador
-        profilePhoneTextView.setOnClickListener {
-            val dialIntent = Intent(Intent.ACTION_DIAL).apply {
-                data = Uri.parse("tel:$phone")
-            }
-            startActivity(dialIntent)
-        }
+
     }
 }
